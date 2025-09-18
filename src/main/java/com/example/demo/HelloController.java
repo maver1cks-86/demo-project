@@ -15,4 +15,8 @@ public class HelloController {
     public String ece() {
         return "Welcome to ECE";
     }
+    @GetMapping("/hello")
+    public String ece() {
+        return "Clair Obscur";
+    }
 }
