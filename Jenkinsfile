@@ -10,21 +10,21 @@ pipeline {
 
         stage('Build Maven Project') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t springboot-demo .'
+                bat 'docker build -t springboot-demo .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker stop springboot-demo || true'
-                sh 'docker rm springboot-demo || true'
-                sh 'docker run -d --name springboot-demo -p 8080:8080 springboot-demo'
+                bat 'docker stop springboot-demo || exit 0'
+                bat 'docker rm springboot-demo || exit 0'
+                bat 'docker run -d --name springboot-demo -p 8080:8080 springboot-demo'
             }
         }
     }
