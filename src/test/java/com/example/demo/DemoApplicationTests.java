@@ -10,5 +10,6 @@ class DemoApplicationTests {
 	void contextLoads() {
 	}
 	//test comment
+	// another test comment
 
 }
