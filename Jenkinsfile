@@ -24,7 +24,7 @@ pipeline {
             steps {
                 bat 'docker stop springboot-demo || exit 0'
                 bat 'docker rm springboot-demo || exit 0'
-                bat 'docker run -d --name springboot-demo -p 8080:8080 springboot-demo'
+                bat 'docker run -d --name springboot-demo -p 9090:8080 springboot-demo'
             }
         }
     }
